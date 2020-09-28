@@ -15,11 +15,11 @@ function HomeScreen() {
     <Tab.Navigator screenOptions={({ route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
-        if (route.name === 'Utama') {
+        if (route.name === 'Halaman Utama') {
             iconName = focused ? 'ios-home' : 'ios-home';
         } else if (route.name === 'Tentang Saya') { 
           iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-        } else if (route.name === 'Kontak') { 
+        } else if (route.name === 'Hubungi Saya') { 
           iconName = focused ? 'ios-person' : 'ios-person';
         }
         return <Ionicons name={iconName} size={size} color={color} />;
@@ -28,9 +28,9 @@ function HomeScreen() {
     })}
       tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray',
       }} >
-        <Tab.Screen name="Utama" component={WelcomeScreen} />
+        <Tab.Screen name="Halaman Utama" component={WelcomeScreen} />
         <Tab.Screen name="Tentang Saya" component={AboutMeScreen} />
-        <Tab.Screen name="Kontak" component={ContactScreen} />
+        <Tab.Screen name="Hubungi Saya" component={ContactScreen} />
     </Tab.Navigator>
   );
 }
@@ -46,7 +46,7 @@ function WelcomeScreen() {
   );
 }
 
-// selamat Datang Screen
+// Screen Halaman Utama
 function WelcomeScreenDetail({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -56,8 +56,17 @@ function WelcomeScreenDetail({ navigation }) {
   );
 }
 
-// Tentang Saya Screen
+// Stack Tentang Saya
 function AboutMeScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} />
+    </Stack.Navigator>
+  );
+}
+
+// Screen Halaman Tentang Saya
+function AboutMeScreenDetail() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>About Me Screen</Text>
@@ -65,8 +74,16 @@ function AboutMeScreen() {
   );
 }
 
-// Kontak Screen
+// Stack HUbungi Saya
 function ContactScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Hubungi Saya" component={ContactScreenDetail} />
+    </Stack.Navigator>
+  );
+}
+
+function ContactScreenDetail() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Contact Screen</Text>
