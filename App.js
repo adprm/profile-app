@@ -3,12 +3,13 @@ import { StyleSheet, Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
-    <View>
-      <Text style={{ textAlign: "center", marginTop: 300 }}>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>
         Home Screen
       </Text>
+      <Button title="Menu" onPress={() => navigation.openDrawer()} />
     </View>
   );
 }
@@ -23,7 +24,6 @@ function SkillsScreen({ navigation }) {
 }
 
 const Drawer = createDrawerNavigator();
-
 
 export default function App() {
   return (
