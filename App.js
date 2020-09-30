@@ -48,7 +48,7 @@ const Stack = createStackNavigator();
 function WelcomeScreen() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Beranda" component={WelcomeScreenDetail} />
+      <Stack.Screen name="Halaman Utama" component={WelcomeScreenDetail} />
     </Stack.Navigator>
   );
 }
