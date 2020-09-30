@@ -8,11 +8,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 import WelcomeScreenDetail from './components/welcomeScreenDetail';
 import AboutMeScreenDetail from './components/aboutMeScreenDetail';
+import ContactMeScreenDetail from './components/contactMeScreenDetail';
 
-// bottom tabs
+// bottom tabs variable
 const Tab = createBottomTabNavigator();
 
-// home / beranda/ Bottom Tabs
+// Bottom Tabs
 function HomeScreen() {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
@@ -33,11 +34,12 @@ function HomeScreen() {
       }} >
         <Tab.Screen name="Halaman Utama" component={WelcomeScreen} />
         <Tab.Screen name="Tentang Saya" component={AboutMeScreen} />
-        <Tab.Screen name="Hubungi Saya" component={ContactScreen} />
+        <Tab.Screen name="Hubungi Saya" component={ContactMeScreen} />
     </Tab.Navigator>
   );
 }
 
+// stack variable
 const Stack = createStackNavigator();
 
 // stack halaman utama
@@ -59,23 +61,15 @@ function AboutMeScreen() {
 }
 
 // Stack HUbungi Saya
-function ContactScreen() {
+function ContactMeScreen() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Hubungi Saya" component={ContactScreenDetail} />
+      <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} />
     </Stack.Navigator>
   );
 }
 
-function ContactScreenDetail() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Contact Screen</Text>
-    </View>
-  );
-}
-
-// keahlian
+// halaman keahlian
 function SkillsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -85,8 +79,10 @@ function SkillsScreen({ navigation }) {
   );
 }
 
+// drawer variable
 const Drawer = createDrawerNavigator();
 
+// export drawer default App
 export default function App() {
   return (
     <NavigationContainer>
