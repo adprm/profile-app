@@ -12,7 +12,6 @@ import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
 import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
 import EducationalScreenDetail from './components/educationalScreenDetail';
-import { Constants } from 'react-native-unimodules';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
