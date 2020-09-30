@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import WelcomeScreenDetail from './components/welcomeScreenDetail';
 import AboutMeScreenDetail from './components/aboutMeScreenDetail';
 import ContactMeScreenDetail from './components/contactMeScreenDetail';
+import SkillsScreenDetail from './components/skillsScreenDetail';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
@@ -69,15 +70,23 @@ function ContactMeScreen() {
   );
 }
 
-// halaman keahlian
-function SkillsScreen({ navigation }) {
+// Stack keahlian
+function SkillsScreen() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Skills Screen</Text>
-      <Button onPress={() => navigation.goBack()} title="Go back to home"></Button>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Keahlian Saya" component={SkillsScreenDetail} />
+    </Stack.Navigator>
   );
 }
+
+// function SkillsScreenDetail({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Skills Screen</Text>
+//       <Button onPress={() => navigation.goBack()} title="Go back to home"></Button>
+//     </View>
+//   );
+// }
 
 // drawer variable
 const Drawer = createDrawerNavigator();
