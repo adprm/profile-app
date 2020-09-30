@@ -11,6 +11,7 @@ import AboutMeScreenDetail from './components/aboutMeScreenDetail';
 import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
 import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
+import EducationalScreenDetail from './components/educationalScreenDetail';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
@@ -75,7 +76,7 @@ function ContactMeScreen() {
 function SkillsScreen() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Keahlian Saya" component={SkillsScreenDetail} />
+      <Stack.Screen name="Keahlian" component={SkillsScreenDetail} />
     </Stack.Navigator>
   );
 }
@@ -84,7 +85,16 @@ function SkillsScreen() {
 function JobExperiencesScreen() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Riwayat Pekerjaan" component={JobExperiencesScreenDetail} />
+      <Stack.Screen name="Pekerjaan" component={JobExperiencesScreenDetail} />
+    </Stack.Navigator>
+  );
+}
+
+// Stack pendidikan
+function EducationalScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Pendidikan" component={EducationalScreenDetail} />
     </Stack.Navigator>
   );
 }
@@ -99,7 +109,8 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Beranda">
         <Drawer.Screen name="Beranda" component={HomeScreen} />
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
-        <Drawer.Screen name="Riwayat Pekerjaan" component={JobExperiencesScreen} />
+        <Drawer.Screen name="Pekerjaan" component={JobExperiencesScreen} />
+        <Drawer.Screen name="Pendidikan" component={EducationalScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
