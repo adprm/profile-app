@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default class SkillsScreenDetail extends Component {
 
@@ -8,7 +8,6 @@ export default class SkillsScreenDetail extends Component {
         return (
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
                 <Text>Skills Screen</Text>
-                <Button onPress={() => this.props.navigation.goBack()} title="Go back to home"></Button>
             </View>
         );
     }
