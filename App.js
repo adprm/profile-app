@@ -6,6 +6,9 @@ import { createStackNavigator} from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons';
 
+import WelcomeScreenDetail from './components/welcomeScreenDetail';
+import AboutMeScreenDetail from './components/aboutMeScreenDetail';
+
 // bottom tabs
 const Tab = createBottomTabNavigator();
 
@@ -46,31 +49,12 @@ function WelcomeScreen() {
   );
 }
 
-// Screen Halaman Utama
-function WelcomeScreenDetail({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Welcome Screen</Text>
-      <Button onPress={() => navigation.openDrawer()} title="Menu"></Button>
-    </View>
-  );
-}
-
 // Stack Tentang Saya
 function AboutMeScreen() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} />
     </Stack.Navigator>
-  );
-}
-
-// Screen Halaman Tentang Saya
-function AboutMeScreenDetail() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>About Me Screen</Text>
-    </View>
   );
 }
 
