@@ -12,6 +12,7 @@ import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
 import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
 import EducationalScreenDetail from './components/educationalScreenDetail';
+import { Constants } from 'react-native-unimodules';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
@@ -46,55 +47,79 @@ function HomeScreen() {
 const Stack = createStackNavigator();
 
 // stack halaman utama
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Halaman Utama" component={WelcomeScreenDetail} />
+      <Stack.Screen name="Halaman Utama" component={WelcomeScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
 
 // Stack Tentang Saya
-function AboutMeScreen() {
+function AboutMeScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} />
+      <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
 
 // Stack HUbungi Saya
-function ContactMeScreen() {
+function ContactMeScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} />
+      <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
 
 // Stack keahlian
-function SkillsScreen() {
+function SkillsScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Keahlian" component={SkillsScreenDetail} />
+      <Stack.Screen name="Keahlian" component={SkillsScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
 
 // Stack riwayat pekerjaan
-function JobExperiencesScreen() {
+function JobExperiencesScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Pekerjaan" component={JobExperiencesScreenDetail} />
+      <Stack.Screen name="Pekerjaan" component={JobExperiencesScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
 
 // Stack pendidikan
-function EducationalScreen() {
+function EducationalScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Pendidikan" component={EducationalScreenDetail} />
+      <Stack.Screen name="Pendidikan" component={EducationalScreenDetail} options={{
+        headerLeft: () => (
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+        )
+      }} />
     </Stack.Navigator>
   );
 }
@@ -106,8 +131,8 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Beranda">
-        <Drawer.Screen name="Beranda" component={HomeScreen} />
+      <Drawer.Navigator initialRouteName="Halaman Utama">
+        <Drawer.Screen name="Halaman Utama" component={HomeScreen} />
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
         <Drawer.Screen name="Pekerjaan" component={JobExperiencesScreen} />
         <Drawer.Screen name="Pendidikan" component={EducationalScreen} />
