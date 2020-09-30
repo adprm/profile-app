@@ -10,6 +10,7 @@ import WelcomeScreenDetail from './components/welcomeScreenDetail';
 import AboutMeScreenDetail from './components/aboutMeScreenDetail';
 import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
+import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
@@ -79,14 +80,14 @@ function SkillsScreen() {
   );
 }
 
-// function SkillsScreenDetail({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Text>Skills Screen</Text>
-//       <Button onPress={() => navigation.goBack()} title="Go back to home"></Button>
-//     </View>
-//   );
-// }
+// Stack riwayat pekerjaan
+function JobExperiencesScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Riwayat Pekerjaan" component={JobExperiencesScreenDetail} />
+    </Stack.Navigator>
+  );
+}
 
 // drawer variable
 const Drawer = createDrawerNavigator();
@@ -98,6 +99,7 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Beranda">
         <Drawer.Screen name="Beranda" component={HomeScreen} />
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
+        <Drawer.Screen name="Riwayat Pekerjaan" component={JobExperiencesScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
