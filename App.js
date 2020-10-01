@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator} from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Ionicons';
 // import components
 import WelcomeScreenDetail from './components/welcomeScreenDetail';
 import AboutMeScreenDetail from './components/aboutMeScreenDetail';
@@ -130,7 +130,22 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Halaman Utama">
+      <Drawer.Navigator initialRouteName="Halaman Utama" screenOptions={({ route }) => ({
+        drawerIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === 'Halaman Utama') {
+            iconName = focused ? 'ios-home' : 'ios-home';
+          } else if (route.name === 'Keahlian') {
+            iconName = focused ? 'ios-rocket' : 'ios-rocket';
+          } else if (route.name === 'Pekerjaan') {
+            iconName = focused ? 'ios-construct' : 'ios-construct';
+          } else if (route.name === 'Pendidikan') {
+            iconName = focused ? 'ios-school' : 'ios-school';
+          }
+          return <Ionicons name={iconName} size={size} color={color} />
+        },
+      })}
+      drawerContentOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray'}} >
         <Drawer.Screen name="Halaman Utama" component={HomeScreen} />
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
         <Drawer.Screen name="Pekerjaan" component={JobExperiencesScreen} />
