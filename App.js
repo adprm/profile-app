@@ -33,7 +33,7 @@ function HomeScreen() {
       },
 
     })}
-      tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray',
+      tabBarOptions={{ activeTintColor: '#0073b1', inactiveTintColor: 'gray',
       }} >
         <Tab.Screen name="Halaman Utama" component={WelcomeScreen} />
         <Tab.Screen name="Tentang Saya" component={AboutMeScreen} />
@@ -154,3 +154,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
