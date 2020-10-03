@@ -48,11 +48,16 @@ const Stack = createStackNavigator();
 // stack halaman utama
 function WelcomeScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Halaman Utama" component={WelcomeScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
-        )
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
+        ),
       }} />
     </Stack.Navigator>
   );
@@ -61,10 +66,15 @@ function WelcomeScreen({ navigation }) {
 // Stack Tentang Saya
 function AboutMeScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
       }} />
     </Stack.Navigator>
@@ -74,10 +84,15 @@ function AboutMeScreen({ navigation }) {
 // Stack HUbungi Saya
 function ContactMeScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
       }} />
     </Stack.Navigator>
@@ -87,10 +102,15 @@ function ContactMeScreen({ navigation }) {
 // Stack keahlian
 function SkillsScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Keahlian" component={SkillsScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
       }} />
     </Stack.Navigator>
@@ -100,10 +120,15 @@ function SkillsScreen({ navigation }) {
 // Stack riwayat pekerjaan
 function JobExperiencesScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Pekerjaan" component={JobExperiencesScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
       }} />
     </Stack.Navigator>
@@ -113,10 +138,15 @@ function JobExperiencesScreen({ navigation }) {
 // Stack pendidikan
 function EducationalScreen({ navigation }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#0073b1'
+      },
+      headerTintColor: '#fff',
+    }}>
       <Stack.Screen name="Pendidikan" component={EducationalScreenDetail} options={{
         headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" onPress={() => navigation.openDrawer()} />
+          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
       }} />
     </Stack.Navigator>
@@ -142,10 +172,10 @@ export default function App() {
           } else if (route.name === 'Pendidikan') {
             iconName = focused ? 'ios-school' : 'ios-school';
           }
-          return <Ionicons name={iconName} size={size} color={color} />
+          return <Ionicons name={iconName} size={25} color={color} />
         },
       })}
-      drawerContentOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }} >
+      drawerContentOptions={{ activeTintColor: '#0073b1', inactiveTintColor: 'gray' }} >
         <Drawer.Screen  name="Halaman Utama" component={HomeScreen} />
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
         <Drawer.Screen name="Pekerjaan" component={JobExperiencesScreen} />
@@ -154,5 +184,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-
