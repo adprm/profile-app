@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
 
 export default class AboutScreenDetail extends Component {
 
