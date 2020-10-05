@@ -4,24 +4,27 @@ import {
   Text,
   View,
   Image,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from 'react-native';
 
 export default class AboutScreenDetail extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <ImageBackground source={require('../assets/logo.png')} style={styles.header} />
-        <Image style={styles.avatar} source={require('../assets/me.jpeg')}/>
-        <View style={styles.body}>
-            <View style={styles.bodyContent}>
-                <Text style={styles.name}>Aditiya Permana</Text>
-                <Text style={styles.info}>Web Developer</Text>
-                <Text style={styles.description}>I am a web developer with strong problem solving skills and proven experience in creating and developing a web based application. I'm currently learning to develop a mobile application using React Native.</Text>
+        <ScrollView>
+            <View style={styles.container}>
+                <ImageBackground source={require('../assets/logo.png')} style={styles.header} />
+                <Image style={styles.avatar} source={require('../assets/me.jpeg')}/>
+                <View style={styles.body}>
+                    <View style={styles.bodyContent}>
+                        <Text style={styles.name}>Aditiya Permana</Text>
+                        <Text style={styles.info}>Web Developer</Text>
+                        <Text style={styles.description}>I am a web developer with strong problem solving skills and proven experience in creating and developing a web based application. I'm currently learning to develop a mobile application using React Native.</Text>
+                    </View>
+                </View>
             </View>
-        </View>
-      </View>
+        </ScrollView>
     );
   }
 }
