@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator} from '@react-navigation/stack';
@@ -26,7 +25,7 @@ function HomeScreen() {
             iconName = focused ? 'ios-home' : 'ios-home';
         } else if (route.name === 'Tentang Saya') { 
           iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-        } else if (route.name === 'Hubungi Saya') { 
+        } else if (route.name === 'Kontak Saya') { 
           iconName = focused ? 'ios-person' : 'ios-person';
         }
         return <Ionicons name={iconName} size={size} color={color} />;
@@ -37,7 +36,7 @@ function HomeScreen() {
       }} >
         <Tab.Screen name="Halaman Utama" component={WelcomeScreen} />
         <Tab.Screen name="Tentang Saya" component={AboutMeScreen} />
-        <Tab.Screen name="Hubungi Saya" component={ContactMeScreen} />
+        <Tab.Screen name="Kontak Saya" component={ContactMeScreen} />
     </Tab.Navigator>
   );
 }
@@ -53,6 +52,7 @@ function WelcomeScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
       <Stack.Screen name="Halaman Utama" component={WelcomeScreenDetail} options={{
         headerLeft: () => (
@@ -71,6 +71,7 @@ function AboutMeScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
       <Stack.Screen name="Tentang Saya" component={AboutMeScreenDetail} options={{
         headerLeft: () => (
@@ -81,7 +82,7 @@ function AboutMeScreen({ navigation }) {
   );
 }
 
-// Stack HUbungi Saya
+// Stack Kontak Saya
 function ContactMeScreen({ navigation }) {
   return (
     <Stack.Navigator screenOptions={{
@@ -89,8 +90,9 @@ function ContactMeScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
-      <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} options={{
+      <Stack.Screen name="Kontak Saya" component={ContactMeScreenDetail} options={{
         headerLeft: () => (
           <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
@@ -107,6 +109,7 @@ function SkillsScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
       <Stack.Screen name="Keahlian" component={SkillsScreenDetail} options={{
         headerLeft: () => (
@@ -125,6 +128,7 @@ function JobExperiencesScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
       <Stack.Screen name="Pekerjaan" component={JobExperiencesScreenDetail} options={{
         headerLeft: () => (
@@ -143,6 +147,7 @@ function EducationalScreen({ navigation }) {
         backgroundColor: '#0073b1'
       },
       headerTintColor: '#fff',
+      headerTitleAlign: "center",
     }}>
       <Stack.Screen name="Pendidikan" component={EducationalScreenDetail} options={{
         headerLeft: () => (
