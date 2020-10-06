@@ -25,8 +25,8 @@ function HomeScreen() {
             iconName = focused ? 'ios-home' : 'ios-home';
         } else if (route.name === 'Tentang Saya') { 
           iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-        } else if (route.name === 'Kontak Saya') { 
-          iconName = focused ? 'ios-person' : 'ios-person';
+        } else if (route.name === 'Hubungi Saya') { 
+          iconName = focused ? 'ios-call' : 'ios-call';
         }
         return <Ionicons name={iconName} size={size} color={color} />;
       },
@@ -36,7 +36,7 @@ function HomeScreen() {
       }} >
         <Tab.Screen name="Halaman Utama" component={WelcomeScreen} />
         <Tab.Screen name="Tentang Saya" component={AboutMeScreen} />
-        <Tab.Screen name="Kontak Saya" component={ContactMeScreen} />
+        <Tab.Screen name="Hubungi Saya" component={ContactMeScreen} />
     </Tab.Navigator>
   );
 }
@@ -92,7 +92,7 @@ function ContactMeScreen({ navigation }) {
       headerTintColor: '#fff',
       headerTitleAlign: "center",
     }}>
-      <Stack.Screen name="Kontak Saya" component={ContactMeScreenDetail} options={{
+      <Stack.Screen name="Hubungi Saya" component={ContactMeScreenDetail} options={{
         headerLeft: () => (
           <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
         )
