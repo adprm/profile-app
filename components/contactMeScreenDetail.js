@@ -65,7 +65,6 @@ export default class ContactMeScreenDetail extends Component {
 const styles = StyleSheet.create({
   list: {
     paddingHorizontal: 5,
-    backgroundColor:"#f6f6f6",
   },
   listContainer:{
     alignItems:'center'
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
     backgroundColor:"#e2e2e2",
     //flexBasis: '42%',
-    width:120,
-    height:120,
+    width:100,
+    height:100,
     borderRadius:60,
     alignItems:'center',
     justifyContent:'center'
