@@ -70,7 +70,7 @@ export default class JobExperiencesScreenDetail extends Component {
           )}}/>
             <AwesomeAlert
               show={showAlert}
-              title="Job desc"
+              title="Deskripsi Pekerjaan"
               message={messageJobDesc}
               closeOnTouchOutside={true}
             />
