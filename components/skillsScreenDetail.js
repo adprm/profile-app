@@ -3,25 +3,33 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity,
   FlatList,
-  ScrollView,
 } from 'react-native';
 
-export default class SkillsScreenDetail extends Component {
+export default class JobExperiencesScreenDetail extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       data: [
-        {id:1,  description:"Build backend system with CodeIgniter and MySQL database.",                                        date:"2019-03-25 09:12:00", color:"#0073b1"},
-        {id:2,  description:"Build an attractive website appearance using HTML / CSS, JavaScript and the Bootstrap framework.", date:"2019-03-25 10:23:00", color:"#0073b1"},
-        {id:3,  description:"Create a RESTful API service.",                                                                    date:"2019-03-25 11:45:00", color:"#0073b1"},
-        {id:4,  description:"Coding languages : HTML/CSS, JavaScript, PHP, SQL.",                                               date:"2019-03-25 09:27:00", color:"#0073b1"},
-        {id:5,  description:"Framework: CodeIgniter, React Native, Bootstrap, jQuery.",                                         date:"2019-03-25 08:13:00", color:"#0073b1"},
-        {id:6,  description:"Tools and Systems Service : NPM, Expo, NodeJS, RESTful API, Git Control.",                         date:"2019-03-25 10:22:00", color:"#0073b1"},
-      ]
+        {id:1,  title:"Coding Languages",        skill:"HTML/CSS, JavaScript, PHP, SQL",               color:"#0073b1"},
+        {id:2,  title:"Frameworks",              skill:"CodeIgniter, React Native, Bootstrap, jQuery", color:"#0073b1"},
+        {id:3,  title:"Tools & Systems Service", skill:"RESTful API, NPM, Git Control, NodeJS, Expo",  color:"#0073b1"},
+      ],
+      showAlert: false,
     };
+  }
+
+  __getCompletedIcon = (item) => {
+    if(item.id === 1) {
+      return "https://img.icons8.com/fluent/48/000000/code.png"
+    } else if (item.id === 2) {
+      return "https://img.icons8.com/color/48/000000/php-designer.png";
+    } else if (item.id === 3) {
+      return "https://img.icons8.com/fluent/48/000000/administrative-tools.png";
+    }
   }
 
   render() {
@@ -37,8 +45,10 @@ export default class SkillsScreenDetail extends Component {
           renderItem={({item}) => {
           return (
             <TouchableOpacity style={[styles.card, {borderColor:item.color}]}>
+              <Image style={styles.image} source={{uri: this.__getCompletedIcon(item)}}/>
               <View style={styles.cardContent}>
-                <Text style={styles.description}>{item.description}</Text>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.skill}>{item.skill}</Text>
               </View>
             </TouchableOpacity>
           )}}/>
@@ -50,18 +60,22 @@ export default class SkillsScreenDetail extends Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:"#fff"
+    backgroundColor:"#eeeeee"
   },
   tasks:{
     flex:1,
   },
   cardContent: {
     marginLeft:20,
+    marginTop:10,
+  },
+  image:{
+    width:25,
+    height:25,
   },
   card:{
-    height: 100,
-    borderRadius: 10,
     shadowColor: '#00000021',
+    borderRadius: 10,
     shadowOffset: {
       width: 0,
       height: 6,
@@ -79,9 +93,16 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     borderLeftWidth:6,
   },
-
-  description:{
+  title:{
     fontSize:18,
     flex:1,
+    color:"#008080",
+    fontWeight: "bold",
+  },
+  skill:{
+    fontSize:14,
+    flex:1,
+    color:"#696969",
+    marginTop:5
   },
 }); 
