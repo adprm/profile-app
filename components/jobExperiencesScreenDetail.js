@@ -33,10 +33,6 @@ export default class JobExperiencesScreenDetail extends Component {
     });
   };
 
-  clickEventListener = (item) => {
-    Alert.alert("Job desc: "+item.jobdesc)
-  }
-
   __getCompletedIcon = (item) => {
     if(item.completed == 1) {
       return "https://img.icons8.com/flat_round/64/000000/checkmark.png";
