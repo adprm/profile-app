@@ -6,9 +6,6 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  Dimensions,
-  ScrollView,
-  Alert
 } from 'react-native';
 import AwesomeAlert from 'react-native-awesome-alerts';
 
