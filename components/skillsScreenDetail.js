@@ -14,15 +14,14 @@ export default class JobExperiencesScreenDetail extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1,  title:"Coding Languages",        skill:"HTML/CSS, JavaScript, PHP, SQL"},
-        {id:2,  title:"Frameworks",              skill:"CodeIgniter, React Native, Bootstrap, jQuery"},
-        {id:3,  title:"Tools & Systems Service", skill:"RESTful API, NPM, Git Control, NodeJS, Expo"},
+        {id:1,  title:"Coding Languages", skill:"HTML/CSS, JavaScript, PHP, SQL."},
+        {id:2,  title:"Frameworks", skill:"CodeIgniter, React Native, Bootstrap, jQuery."},
+        {id:3,  title:"Tools & Systems Service", skill:"RESTful API, NPM, Git Control, NodeJS, Expo."},
       ],
-      showAlert: false,
     };
   }
 
-  __getCompletedIcon = (item) => {
+  __getIcon = (item) => {
     if(item.id === 1) {
       return "https://img.icons8.com/fluent/48/000000/code.png"
     } else if (item.id === 2) {
@@ -45,7 +44,7 @@ export default class JobExperiencesScreenDetail extends Component {
           renderItem={({item}) => {
           return (
             <TouchableOpacity style={styles.card}>
-              <Image style={styles.image} source={{uri: this.__getCompletedIcon(item)}}/>
+              <Image style={styles.image} source={{uri: this.__getIcon(item)}}/>
               <View style={styles.cardContent}>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.skill}>{item.skill}</Text>
