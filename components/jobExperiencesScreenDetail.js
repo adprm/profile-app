@@ -17,8 +17,8 @@ export default class JobExperiencesScreenDetail extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1,  description:"LiteTeknoID - Web Developer", jobdesc: "Build App", date:"January 2020 - Present", color:"#0073b1", completed:0},
-        {id:2,  description:"ModanaID - Software Developer",     jobdesc: "Build Web", date:"September 2019 - December 2019", color:"#0073b1", completed:1},
+        {id:1,  description:"LiteTeknoID - Web Developer", jobdesc: "Build applications and attractive web appearance", date:"January 2020 - Present", color:"#0073b1", completed:0},
+        {id:2,  description:"ModanaID - Software Developer",     jobdesc: "Develop web admin using Vue JS and REST API", date:"September 2019 - December 2019", color:"#0073b1", completed:1},
       ]
     };
   }
