@@ -18,8 +18,8 @@ export default class JobExperiencesScreenDetail extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1,  description:"LiteTeknoID - Web Developer",   jobdesc: "Build an attractive web appearance, Do a bug fix, Build mobile applications with React Native", date:"January 2020 - Present",         color:"#0073b1", completed:0},
-        {id:2,  description:"ModanaID - Software Developer", jobdesc: "Developing the Web using Vue JS, Create a REST client API, Performed a bug fix",                date:"September 2019 - December 2019", color:"#0073b1", completed:1},
+        {id:1,  description:"LiteTeknoID - Web Developer",   jobdesc: "Build an attractive web appearance, Do a bug fix, Build mobile applications with React Native", date:"January 2020 - Present",         completed:0},
+        {id:2,  description:"ModanaID - Software Developer", jobdesc: "Developing the Web using Vue JS, Create a REST client API, Performed a bug fix",                date:"September 2019 - December 2019", completed:1},
       ],
       showAlert: false
     };
@@ -60,7 +60,7 @@ export default class JobExperiencesScreenDetail extends Component {
           }}
           renderItem={({item}) => {
           return (
-            <TouchableOpacity style={[styles.card, {borderColor:item.color}]} onPress={() => {this.showAlert(item)}}>
+            <TouchableOpacity style={styles.card} onPress={() => {this.showAlert(item)}}>
               <Image style={styles.image} source={{uri: this.__getCompletedIcon(item)}}/>
               <View style={styles.cardContent}>
                 <Text style={styles.description}>{item.description}</Text>
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
   card:{
     shadowColor: '#00000021',
     borderRadius: 10,
+    borderColor: "#0073b1",
     shadowOffset: {
       width: 0,
       height: 6,
