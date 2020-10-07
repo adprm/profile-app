@@ -16,10 +16,10 @@ export default class SkillsScreenDetail extends Component {
       data: [
         {id:1,  description:"Build backend system with CodeIgniter and MySQL database.",                                        date:"2019-03-25 09:12:00", color:"#0073b1"},
         {id:2,  description:"Build an attractive website appearance using HTML / CSS, JavaScript and the Bootstrap framework.", date:"2019-03-25 10:23:00", color:"#0073b1"},
-        {id:3,  description:"Create a RESTful API service.",                                                                     date:"2019-03-25 11:45:00", color:"#0073b1"},
-        {id:4,  description:"Coding languages : HTML/CSS, JavaScript, PHP, SQL.",                                                date:"2019-03-25 09:27:00", color:"#0073b1"},
-        {id:5,  description:"Framework: CodeIgniter, React Native, Bootstrap, jQuery.",                                          date:"2019-03-25 08:13:00", color:"#0073b1"},
-        {id:6,  description:"Tools and Systems Service : NPM, Expo, NodeJS, RESTful API, Git Control.",                                  date:"2019-03-25 10:22:00", color:"#0073b1"},
+        {id:3,  description:"Create a RESTful API service.",                                                                    date:"2019-03-25 11:45:00", color:"#0073b1"},
+        {id:4,  description:"Coding languages : HTML/CSS, JavaScript, PHP, SQL.",                                               date:"2019-03-25 09:27:00", color:"#0073b1"},
+        {id:5,  description:"Framework: CodeIgniter, React Native, Bootstrap, jQuery.",                                         date:"2019-03-25 08:13:00", color:"#0073b1"},
+        {id:6,  description:"Tools and Systems Service : NPM, Expo, NodeJS, RESTful API, Git Control.",                         date:"2019-03-25 10:22:00", color:"#0073b1"},
       ]
     };
   }
