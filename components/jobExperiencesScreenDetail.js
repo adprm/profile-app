@@ -10,6 +10,7 @@ import {
   ScrollView,
   Alert
 } from 'react-native';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 export default class JobExperiencesScreenDetail extends Component {
 
