@@ -6,9 +6,6 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  Dimensions,
-  ScrollView,
-  Alert
 } from 'react-native';
 import AwesomeAlert from 'react-native-awesome-alerts';
 
@@ -18,9 +15,9 @@ export default class JobExperiencesScreenDetail extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1,  education:"Binaniaga University of Indonesia", desc: "Majoring in Informatic Engieering", date:"2019 - Present", completed:0},
-        {id:2,  education:"Coding Bootcamp Refactory", desc: "Learn to build web and applications using Vue JS and Kotlin", date:"September 2019 - Desember 2019", completed:1},
-        {id:3,  education:"Bina Warga 1 High School", desc: "Majoring in Computer & Network Engineering", date:"2016 - 2019", completed:1},
+        {id:1,  education:"Binaniaga University of Indonesia", desc: "Informatic Engieering", date:"2019 - Present", completed:0},
+        {id:2,  education:"Coding Bootcamp Refactory", desc: "Learn to build web and applications using Vue JS and Kotlin", date:"September 2019 - December 2019", completed:1},
+        {id:3,  education:"Bina Warga 1 High School", desc: "Computer & Network Engineering", date:"2016 - 2019", completed:1},
       ],
       showAlert: false
     };
@@ -67,7 +64,7 @@ export default class JobExperiencesScreenDetail extends Component {
           )}}/>
             <AwesomeAlert
               show={showAlert}
-              title="Description"
+              title="Deskripsi/Jurusan"
               message={messageDesc}
               closeOnTouchOutside={true}
             />
