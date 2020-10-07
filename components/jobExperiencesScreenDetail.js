@@ -25,6 +25,14 @@ export default class JobExperiencesScreenDetail extends Component {
     };
   }
 
+  // menampilkan alert
+  showAlert = (item) => {
+    this.setState({
+      showAlert: true,
+      messageJobDesc: item.jobdesc,
+    });
+  };
+
   clickEventListener = (item) => {
     Alert.alert("Job desc: "+item.jobdesc)
   }
@@ -38,6 +46,9 @@ export default class JobExperiencesScreenDetail extends Component {
   }
 
   render() {
+    const {showAlert} = this.state;
+    const {messageJobDesc} = this.state;
+
     return (
       <View style={styles.container}>
         <FlatList 
@@ -49,7 +60,7 @@ export default class JobExperiencesScreenDetail extends Component {
           }}
           renderItem={({item}) => {
           return (
-            <TouchableOpacity style={[styles.card, {borderColor:item.color}]} onPress={() => {this.clickEventListener(item)}}>
+            <TouchableOpacity style={[styles.card, {borderColor:item.color}]} onPress={() => {this.showAlert(item)}}>
               <Image style={styles.image} source={{uri: this.__getCompletedIcon(item)}}/>
               <View style={styles.cardContent}>
                 <Text style={styles.description}>{item.description}</Text>
@@ -57,6 +68,12 @@ export default class JobExperiencesScreenDetail extends Component {
               </View>
             </TouchableOpacity>
           )}}/>
+            <AwesomeAlert
+              show={showAlert}
+              title="Job desc"
+              message={messageJobDesc}
+              closeOnTouchOutside={true}
+            />
       </View>
     );
   }
