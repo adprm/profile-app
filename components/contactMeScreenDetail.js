@@ -5,7 +5,6 @@ import {
   View,
   TouchableOpacity,
   Image,
-  Alert,
   ScrollView,
   FlatList,
   Linking,
