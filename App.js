@@ -11,6 +11,7 @@ import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
 import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
 import EducationalScreenDetail from './components/educationalScreenDetail';
+import CertificateScreenDetail from './components/certificateScreenDetail';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
