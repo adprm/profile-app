@@ -197,7 +197,7 @@ export default function App() {
           } else if (route.name === 'Pendidikan') {
             iconName = focused ? 'ios-school' : 'ios-school';
           } else if (route.name === 'Sertifikat') {
-            iconName = focused ? 'ios-school' : 'ios-school';
+            iconName = focused ? 'ios-document' : 'ios-document';
           }
           return <Ionicons name={iconName} size={25} color={color} />
         },
