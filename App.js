@@ -193,7 +193,7 @@ export default function App() {
           } else if (route.name === 'Keahlian') {
             iconName = focused ? 'ios-rocket' : 'ios-rocket';
           } else if (route.name === 'Pekerjaan') {
-            iconName = focused ? 'ios-construct' : 'ios-construct';
+            iconName = focused ? 'ios-briefcase' : 'ios-briefcase';
           } else if (route.name === 'Pendidikan') {
             iconName = focused ? 'ios-school' : 'ios-school';
           } else if (route.name === 'Sertifikat') {
