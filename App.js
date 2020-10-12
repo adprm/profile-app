@@ -11,7 +11,6 @@ import ContactMeScreenDetail from './components/contactMeScreenDetail';
 import SkillsScreenDetail from './components/skillsScreenDetail';
 import JobExperiencesScreenDetail from './components/jobExperiencesScreenDetail';
 import EducationalScreenDetail from './components/educationalScreenDetail';
-import CertificateScreenDetail from './components/certificateScreenDetail';
 
 // bottom tabs variable
 const Tab = createBottomTabNavigator();
@@ -159,25 +158,6 @@ function EducationalScreen({ navigation }) {
   );
 }
 
-// Stack Sertifikat
-function CertificateScreen({ navigation }) {
-  return (
-    <Stack.Navigator screenOptions={{
-      headerStyle: {
-        backgroundColor: '#0073b1'
-      },
-      headerTintColor: '#fff',
-      headerTitleAlign: "center",
-    }}>
-      <Stack.Screen name="Sertifikat" component={CertificateScreenDetail} options={{
-        headerLeft: () => (
-          <Ionicons style={{ fontSize: 30, paddingLeft: 5 }} name="ios-menu" color='#fff' onPress={() => navigation.openDrawer()} />
-        )
-      }} />
-    </Stack.Navigator>
-  );
-}
-
 // drawer variable
 const Drawer = createDrawerNavigator();
 
@@ -186,7 +166,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Halaman Utama" screenOptions={({ route }) => ({
-        drawerIcon: ({ focused, color, size }) => {
+        drawerIcon: ({ focused, color }) => {
           let iconName;
           if (route.name === 'Halaman Utama') {
             iconName = focused ? 'ios-home' : 'ios-home';
@@ -196,9 +176,8 @@ export default function App() {
             iconName = focused ? 'ios-briefcase' : 'ios-briefcase';
           } else if (route.name === 'Pendidikan') {
             iconName = focused ? 'ios-school' : 'ios-school';
-          } else if (route.name === 'Sertifikat') {
-            iconName = focused ? 'ios-document' : 'ios-document';
           }
+
           return <Ionicons name={iconName} size={25} color={color} />
         },
       })}
@@ -207,7 +186,6 @@ export default function App() {
         <Drawer.Screen name="Keahlian" component={SkillsScreen} />
         <Drawer.Screen name="Pekerjaan" component={JobExperiencesScreen} />
         <Drawer.Screen name="Pendidikan" component={EducationalScreen} />
-        <Drawer.Screen name="Sertifikat" component={CertificateScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
