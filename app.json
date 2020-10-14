@@ -3,6 +3,7 @@
   "displayName": "myProfile",
   "expo": {
     "name": "Adit App",
+    "description": "Application about me like a professional resume",
     "slug": "myProfile",
     "version": "1.0.0",
     "icon": "./assets/logo.png",
