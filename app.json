@@ -1,5 +1,5 @@
 {
-  "name": "myProfile",
+  "name": "Adit App",
   "displayName": "myProfile",
   "expo": {
     "name": "Adit App",
@@ -15,6 +15,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "android": "com.liteteknoid.myProfile"
+    "android": {
+      "package": "com.liteteknoid.AditApp",
+      "versionCode": 1
+    }
   }
 }
