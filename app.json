@@ -7,8 +7,14 @@
     "slug": "myProfile",
     "version": "1.0.0",
     "icon": "./assets/logo.png",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": "com.liteteknoid.myProfile"
   }
 }
